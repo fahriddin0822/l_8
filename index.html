@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Phone Selector</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .main {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .main.dark {
+      background-color: #222;
+      color: #fff;
+    }
+
+    .main.light {
+      background-color: #f4f4f4;
+      color: #000;
+    }
+
+    .title {
+      font-size: clamp(2rem, 10vw, 5rem);
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin: 10px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .add__screen {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.7);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      display: none;
+    }
+
+    .add__screen form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .add__screen input {
+      font-size: 1rem;
+      margin-bottom: 10px;
+      padding: 5px;
+      width: 200px;
+    }
+
+    .add__screen button {
+      margin: 5px;
+      padding: 10px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .toggle__btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <main class="main dark">
+    <h1 class="title">+998 ** *** ** **</h1>
+    <button class="btn">Start</button>
+    <button class="btn add-btn">Add</button>
+    <button class="toggle__btn">Light Mode</button>
+  </main>
+
+  <div class="add__screen">
+    <form id="add-form">
+      <input type="text" id="new-number" placeholder="Enter new number" required />
+      <div>
+        <button type="button" id="save__number">Save</button>
+        <button type="button" id="cancel__add">Cancel</button>
+      </div>
+    </form>
+  </div>
+
+  <audio class="audio" src="./assets/sounds/ringtone-193209.mp3"></audio>
+
+  <script src="./app.js"></script>
+</body>
+</html>
